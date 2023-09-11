@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         "nav-border": "#EBEAEA",
         "nav-bg": "#53389E",
+        "items-title": "#101828",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

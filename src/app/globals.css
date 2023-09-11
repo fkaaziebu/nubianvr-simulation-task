@@ -39,3 +39,19 @@ body {
 .img-cover {
   @apply w-full object-cover aspect-square;
 }
+
+.img-description {
+  @apply flex flex-col absolute bottom-0 w-full bg-slate-100 h-[40%] backdrop-blur-md font-medium bg-white/30 border-t-2 border-gray-100 p-5 gap-2;
+}
+
+.img-description_name {
+  @apply text-2xl text-white font-semibold mb-3;
+}
+
+.img-description_position {
+  @apply text-base text-white font-medium;
+}
+
+.img-description_description {
+  @apply text-white font-normal;
+}
