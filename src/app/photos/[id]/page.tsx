@@ -1,34 +1,19 @@
 import Frame from "@/components/Frame";
+import { Profile } from "../../../../common.types";
+import { getSingleData } from "@/lib/action";
 
-async function getData(id: string) {
-  const res = await fetch(`https://swapi.dev/api/people/${id}`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
-
-type Profile = {
-  id: string;
-  name: string;
-  url: string;
-  hair_color: string;
+interface ProfileInfo extends Profile {
   imgSrc: string;
-};
+}
 
 export default async function PhotoPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
-  const results: any = await getData(id);
+  const results: any = await getSingleData(id);
 
-  const profile: Profile = {
+  const user: ProfileInfo = {
     id: id,
     name: results.name,
     url: results.url,
@@ -37,9 +22,9 @@ export default async function PhotoPage({
   };
 
   return (
-    <div className="container mx-auto my-10">
-      <div className="w-1/2 mx-auto border border-gray-700">
-        <Frame profile={profile} />
+    <div className="container mx-auto mt-[80px]">
+      <div className="w-[98%] sm:w-1/2 mx-auto border border-gray-700">
+        <Frame profile={user} />
       </div>
     </div>
   );

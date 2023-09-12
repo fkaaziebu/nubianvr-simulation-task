@@ -1,32 +1,17 @@
 import Frame from "@/components/Frame";
 import Modal from "@/components/Modal";
 import React from "react";
+import { Profile } from "../../../../../common.types";
+import { getSingleData } from "@/lib/action";
 
-async function getData(id: string) {
-  const res = await fetch(`https://swapi.dev/api/people/${id}`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
+interface ProfileInfo extends Profile {
+  imgSrc: string;
 }
 
-type Profile = {
-  id: string;
-  name: string;
-  url: string;
-  hair_color: string;
-  imgSrc: string;
-};
-
 const PhotoModal = async ({ params: { id } }: { params: { id: string } }) => {
-  const results: any = await getData(id);
+  const results: any = await getSingleData(id);
 
-  const profile: Profile = {
+  const user: ProfileInfo = {
     id: id,
     name: results.name,
     url: results.url,
@@ -36,7 +21,7 @@ const PhotoModal = async ({ params: { id } }: { params: { id: string } }) => {
 
   return (
     <Modal>
-      <Frame profile={profile} />
+      <Frame profile={user} />
     </Modal>
   );
 };

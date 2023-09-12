@@ -6,7 +6,7 @@ export default function GithubCorner() {
       href="https://github.com/fkaaziebu/nubianvr-simulation-task"
       target="_blank"
       rel="noopener noreferrer"
-      className={styles['github-corner']}
+      className={`${styles['github-corner']} fixed top-0 right-0 z-50`}
       aria-label="View source on GitHub"
     >
       <svg
