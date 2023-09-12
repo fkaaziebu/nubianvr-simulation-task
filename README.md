@@ -14,10 +14,6 @@ After the installation has completed, the development server can be started usin
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
 After running the commands above, the application becomes available in [http://localhost:3000](http://localhost:3000) if the port 3000 is not in use else it opens in an available port
