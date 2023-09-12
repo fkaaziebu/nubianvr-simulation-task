@@ -1,27 +1,27 @@
 import Image from "next/image";
 
-type Photo = {
+type Profile = {
   id: string;
   name: string;
-  href: string;
-  username: string;
-  imageSrc: string;
+  url: string;
+  hair_color: string;
+  imgSrc: string;
 };
 
-export default function Frame({ photo }: { photo: Photo }) {
+export default function Frame({ profile }: { profile: Profile }) {
   return (
     <>
       <Image
         alt=""
-        src={photo.imageSrc}
+        src={profile.imgSrc}
         height={600}
         width={600}
         className="w-full object-cover aspect-square col-span-2"
       />
 
       <div className="bg-white p-4 px-6">
-        <h3>{photo.name}</h3>
-        <p>Taken by {photo.username}</p>
+        <h3>{profile.name}</h3>
+        <p>Taken by {profile.hair_color}</p>
       </div>
     </>
   );

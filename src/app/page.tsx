@@ -55,7 +55,11 @@ const Home = async ({ searchParams: { page } }: Props) => {
       <Pagination count={Math.ceil(results?.count / 10)} />
       <div className="img-container">
         {data.map(({ name, id, url, hair_color }) => (
-          <Link key={id} href={`/photos/${id}`} className="relative">
+          <Link
+            key={id}
+            href={`/photos/${id}`}
+            className="relative transition ease-out duration-500 hover:scale-105 hover:z-50"
+          >
             <Image
               alt=""
               src={`https://picsum.photos/id/${id}/200/300`}

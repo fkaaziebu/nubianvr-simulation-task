@@ -14,6 +14,16 @@ body {
   font-family: Inter;
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 12px;
+}
+
 .flexCenter {
   @apply flex justify-center items-center;
 }
