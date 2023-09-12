@@ -34,12 +34,12 @@ body {
 
 /* Navbar */
 .navbar {
-  @apply py-5 px-8 border-b border-nav-border bg-nav-bg gap-4;
+  @apply flex justify-center content-center py-2 px-10 sm:py-6 sm:px-8 border-b border-nav-border bg-nav-bg gap-4;
 }
 
 /* Star Wars */
 .title {
-  @apply text-center text-4xl font-bold mb-10 mt-[150px] text-items-title;
+  @apply text-center text-xl md:text-4xl font-bold mb-1 md:mb-10 mt-[100px] sm:mt-[150px] text-items-title;
 }
 
 .img-container {
