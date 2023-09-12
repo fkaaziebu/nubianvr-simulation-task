@@ -51,7 +51,7 @@ body {
 }
 
 .img-description {
-  @apply flex flex-col absolute bottom-0 w-full bg-slate-100 h-[40%] md:h-[50%] 2xl:h-[40%] backdrop-blur-md font-medium bg-white/30 border-t-2 border-gray-100 p-2 sm:p-2 md:p-2 gap-2 xl:gap-2 sm:gap-0;
+  @apply flex flex-col absolute bottom-0 w-full bg-slate-100 h-[40%] md:h-[50%] 2xl:h-[40%] backdrop-blur-md font-medium bg-white/10 border-t-2 border-gray-100/60 p-2 sm:p-2 md:p-2 gap-2 xl:gap-2 sm:gap-0;
 }
 
 .img-description_name {

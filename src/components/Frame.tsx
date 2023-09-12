@@ -20,8 +20,11 @@ export default function Frame({ profile }: { profile: Profile }) {
       />
 
       <div className="bg-white p-4 px-6">
-        <h3>{profile.name}</h3>
-        <p>Taken by {profile.hair_color}</p>
+        <h3 className="text-3xl font-semibold">{profile.name}</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem,
+          quibusdam! {profile.hair_color}
+        </p>
       </div>
     </>
   );
