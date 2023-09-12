@@ -3,12 +3,15 @@ import Pagination from "@/components/Pagination";
 import ProfileCard from "@/components/ProfileCard";
 import { getData } from "@/lib/action";
 import { Profile } from "../../common.types";
+import LoadingSkeleton from "@/components/LoadingSkeleton";
 
 type Props = {
   searchParams: {
     page: string;
   };
 };
+
+export const revalidate = 10;
 
 const Home = async ({ searchParams: { page } }: Props) => {
   const results: any = await getData(page);
@@ -35,9 +38,15 @@ const Home = async ({ searchParams: { page } }: Props) => {
   return (
     <div className="container mx-auto">
       <h2 className="title">Star Wars Characters</h2>
-      <Pagination maxPage={totalPages} />
-      <ProfileCard data={data} />
-      <Pagination maxPage={totalPages} />
+      {data.length !== 0 ? (
+        <>
+          <Pagination maxPage={totalPages} />
+          <ProfileCard data={data} />
+          <Pagination maxPage={totalPages} />
+        </>
+      ) : (
+        <LoadingSkeleton />
+      )}
     </div>
   );
 };
